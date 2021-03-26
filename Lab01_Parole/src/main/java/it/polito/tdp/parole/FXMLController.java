@@ -1,6 +1,7 @@
 package it.polito.tdp.parole;
 
 import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
@@ -43,10 +44,10 @@ public class FXMLController {
     @FXML
     void doCancella(ActionEvent event) {
     		String daCancellare = txtResult.getSelectedText();
-    		//elencoList.cancella(daCancellare);
-    		//String risultato = elencoList.toString();
-    		elencoArray.cancella(daCancellare);
-    		String risultato = elencoArray.toString();
+    		elencoList.cancella(daCancellare);
+    		String risultato = elencoList.toString();
+    		//elencoArray.cancella(daCancellare);
+    		//String risultato = elencoArray.toString();
     		txtResult.setText(risultato);
     		String time = txtTimes.getText()+"\n"+System.nanoTime();
     		txtTimes.setText(time);
@@ -57,12 +58,12 @@ public class FXMLController {
     	// TODO
     	String parola = txtParola.getText();
     	if(!parola.equals("")) {
-    		//elencoList.addParola(parola);
-    		//LinkedList<String> elencoParole = elencoList.getElenco();
-    		//String risultato = elencoList.toString();
-    		elencoArray.addParola(parola);
-    		ArrayList<String> elencoParole = elencoArray.getElenco();
-    		String risultato = elencoArray.toString();
+    		elencoList.addParola(parola);
+    		elencoList.getElenco();
+    		String risultato = elencoList.toString();
+    		//elencoArray.addParola(parola);
+    		//ArrayList<String> elencoParole = elencoArray.getElenco();
+    		//String risultato = elencoArray.toString();
     		txtResult.setText(risultato);
     		txtParola.setText("");
     		String time = txtTimes.getText()+"\n"+System.nanoTime();
@@ -74,8 +75,8 @@ public class FXMLController {
     @FXML
     void doReset(ActionEvent event) {
     	// TODO
-    	//elencoList.reset();
-    	elencoArray.reset();
+    	elencoList.reset();
+    	//elencoArray.reset();
     	txtResult.setText("");
     	txtTimes.setText("");
     }
